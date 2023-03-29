@@ -13,6 +13,16 @@
  * eye_value is an integer number of eyes: either 0, 1, 2, or 3
  * mouth_value is how open the mouth is and should generally range from 0.5 to 10
  */
+
+function sun(){
+noStroke()
+ellipse(0,0,20,20)
+fill(0)
+ellipse(0,0,10,10)
+
+
+}
+
 function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   const bg_color3 = [71, 222, 219];
   const fg_color3 = [255, 93, 35];
