@@ -15,13 +15,33 @@
  */
 
 function sun(){
-noStroke()
-ellipse(0,0,20,20)
-fill(0)
-ellipse(0,0,10,10)
+noStroke();
+ellipse(0,0,20,20);
+fill(0);
+ellipse(0,0,10,10);
 
-
+// push();
+// translate(width/2,height/2);
+// Out(0,0,30,70,8);
+// pop();
 }
+
+// function Out(x,y,radius1, radius2, npoints){
+//   // angleMode(DEGREES);
+//   let angle = TWO_PI / npoints;
+//   let halfAngle = angle / 2.0;
+//   beginShape();
+//   for (let i = 0; i < TWO_PI; i += angle) {
+//     let sx = x + cos(i) * radius2;
+//     let sy = y + sin(i) * radius2;
+//     vertex(sx, sy);
+//     sx = x + cos(i + halfAngle) * radius1;
+//     sy = y + sin(i + halfAngle) * radius1;
+//     vertex(sx, sy);
+//   }
+//   endShape(CLOSE);
+// }
+
 
 function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   const bg_color3 = [71, 222, 219];
