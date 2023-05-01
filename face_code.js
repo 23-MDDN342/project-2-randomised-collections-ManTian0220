@@ -15,39 +15,86 @@
  */
 
 function sun(){
+push(); // circle white
 noStroke();
+fill(255);
 ellipse(0,0,20);
-fill(0);
-ellipse(0,0,10);
-fill(249, 171, 255);
-ellipse(3,0,2);
-fill(249, 171, 255);
-ellipse(-3,0,2);
-fill(255);
-ellipse(-1,0,0.5);
-fill(255);
-ellipse(1,0,0.5);
-push();
-angleMode(DEGREES);
-noFill();
-stroke(255);
-arc(0,0, 5, 5, 0, 180);
 pop();
-shine(0, 0,5,30,10,0)
+
+// shine
+push();
+noStroke();
+fill(243,185,88);
+shine(0, 0, 4, 8, 8)
+pop();
+
+push();
+rotate(45);
+stroke(231,85,63);
+noFill();
+shine(0, 0, 4, 6.5, 6.5)
+pop();
+
+push();
+rotate(90);
+stroke(231,85,63);
+noFill();
+shine(0, 0, 4, 6, 6)
+pop();
+//shine end
+
+push(); // sun 
+noStroke();
+fill(78,107,175);
+ellipse(0,0,10);
+pop();
+
+push(); // cheek
+noStroke();
+fill(214,126,66);
+ellipse(-3,0,2);
+ellipse(3,0,2);
+pop();
+
+push(); // eyes
+noStroke();
+fill(42,33,26);
+ellipse(-1,0,1);
+// fill(42,33,26);
+// ellipse(-1,0,0.8);
+pop();
+
+push(); // eyes
+noStroke();
+fill(42,33,26);
+ellipse(1,0,0.5);
+// fill(42,33,26);
+// ellipse(1,0,0.8);
+pop();
+
+push(); // mouth
+angleMode(DEGREES);
+strokeWeight(0.5);
+noFill();
+stroke(172,72,37);
+arc(0,0, 5, 5, 0, 120);
+pop();
+
 }
 
- function shine(x,y,n,outerRadius, innerRadius,rotation) {
+// shine function  
+ function shine(x , y ,n ,outerRadius , innerRadius) {
+  angleMode(RADIANS)
   let theta = TAU / n;
    beginShape();
 
    for(let i = 0; i < n; i++){
     vertex(x+ cos(i * theta) * outerRadius, y + sin(i*theta) * outerRadius);
-    vertex(x+ cos((i + 0.5) * theta) * innerRadius, y + sin ((i+0.5)* theta) * outerRadius);
+    vertex(x+ cos((i + 0.5 ) * theta) * innerRadius, y + sin ((i+0.5)* theta) * outerRadius);
   }
     endShape(CLOSE);
-  
 }
-
+// shine function end
 
 function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   const bg_color3 = [71, 222, 219];
