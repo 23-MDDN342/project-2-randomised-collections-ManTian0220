@@ -15,7 +15,6 @@
  */
 
 function sun(){
-angleMode(DEGREES);
 noStroke();
 ellipse(0,0,20);
 fill(0);
@@ -28,19 +27,25 @@ fill(255);
 ellipse(-1,0,0.5);
 fill(255);
 ellipse(1,0,0.5);
+push();
+angleMode(DEGREES);
 noFill();
 stroke(255);
 arc(0,0, 5, 5, 0, 180);
-push();
-shine(0, 0, 30, 70, 6);
 pop();
+shine(0, 0,5,30,10,0)
 }
 
- function shine() {
-   for(let i = 0; i <= 9; i++){
-    
-}
+ function shine(x,y,n,outerRadius, innerRadius,rotation) {
+  let theta = TAU / n;
+   beginShape();
 
+   for(let i = 0; i < n; i++){
+    vertex(x+ cos(i * theta) * outerRadius, y + sin(i*theta) * outerRadius);
+    vertex(x+ cos((i + 0.5) * theta) * innerRadius, y + sin ((i+0.5)* theta) * outerRadius);
+  }
+    endShape(CLOSE);
+  
 }
 
 
