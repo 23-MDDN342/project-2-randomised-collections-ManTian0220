@@ -58,23 +58,19 @@ function draw () {
         // let tilt_value = random(-45, 45);
         // let mouth_value = random(3,4);
         // let is_cyclops = random(0, 100);
-
-        if(is_cyclops < 10) {
+        let colour = int(random(0,1));
+        // if(is_cyclops < 10) {
           // eye_value = 1;
           // tilt_value = random(-5, 5);
           // mouth_value = random(0, 1.7);
-          shine_angle = random();
-          eye_size = random();
-          mouth_angle = randm();
-          cheeck_color = random();
           
-        }
+        // }
 
         push();
         translate(x, y);
         scale(w/25, h/25);
         
-        orangeAlienFace(tilt_value, eye_value, mouth_value);
+        sun(colour);
         pop();
       
     }

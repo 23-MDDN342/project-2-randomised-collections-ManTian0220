@@ -14,11 +14,18 @@
  * mouth_value is how open the mouth is and should generally range from 0.5 to 10
  */
 
-function sun(){
+function sun(colour){
 push(); // circle white
+if (colour ==0){
 noStroke();
 fill(255);
 ellipse(0,0,20);
+} 
+else if(colour ==1){
+  noStroke();
+fill(0);
+ellipse(0,0,20);
+}
 pop();
 
 // shine
@@ -83,7 +90,7 @@ pop();
 }
 
 // shine function  
- function shine(x , y ,n ,outerRadius , innerRadius) {
+  function shine(x , y ,n ,outerRadius , innerRadius) {
   angleMode(RADIANS)
   let theta = TAU / n;
    beginShape();

@@ -101,7 +101,8 @@ function draw () {
   }
 
   if (mode == '4') {
-    sun();
+    let colour = int(map(s1,0,100,0,1))
+    sun(colour);
   }
 
   pop();
