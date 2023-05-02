@@ -14,7 +14,7 @@
  * mouth_value is how open the mouth is and should generally range from 0.5 to 10
  */
 
-function sun(colour){
+function sun(outerpoints, innerpoints, colour){
 push(); // circle white
 if (colour ==0){
 noStroke();
@@ -32,21 +32,21 @@ pop();
 push();
 noStroke();
 fill(243,185,88);
-shine(0, 0, 6, 10, 6)
+outer_shine(0, 0, outerpoints, 10, 6)
 pop();
 
 push();
 rotate(45);
 stroke(231,85,63);
 noFill();
-shine(0, 0, 4, 6.5, 6.5)
+inner_shine(0, 0, innerpoints, 6.5, 6.5)
 pop();
 
 push();
 rotate(90);
 stroke(231,85,63);
 noFill();
-shine(0, 0, 4, 6, 6)
+inner_shine(0, 0, innerpoints, 6, 6)
 pop();
 //shine end
 
@@ -81,7 +81,6 @@ pop();
 
 push(); // mouth
 angleMode(DEGREES);
-strokeWeight(0.5);
 noFill();
 stroke(172,72,37);
 arc(0,0, 5, 5, 0, 120);
@@ -89,19 +88,33 @@ pop();
 
 }
 
-// shine function  
-  function shine(x , y ,n ,outerRadius , innerRadius) {
+// Outerpoint
+  function outer_shine(x , y ,outerpoints ,outerRadius , innerRadius) {
   angleMode(RADIANS)
-  let theta = TAU / n;
+  let theta = TAU / outerpoints;
    beginShape();
 
-   for(let i = 0; i < n; i++){
+   for(let i = 0; i < outerpoints; i++){
     vertex(x+ cos(i * theta) * outerRadius, y + sin(i*theta) * outerRadius);
     vertex(x+ cos((i + 0.5 ) * theta) * innerRadius, y + sin ((i + 0.5) * theta) * innerRadius);
   }
     endShape(CLOSE);
 }
-// shine function end
+// Outerpoint end
+
+// Outerpoint
+function inner_shine(x , y ,innerpoints ,outerRadius , innerRadius) {
+  angleMode(RADIANS)
+  let theta = TAU / innerpoints;
+   beginShape();
+
+   for(let i = 0; i < innerpoints; i++){
+    vertex(x+ cos(i * theta) * outerRadius, y + sin(i*theta) * outerRadius);
+    vertex(x+ cos((i + 0.5 ) * theta) * innerRadius, y + sin ((i + 0.5) * theta) * innerRadius);
+  }
+    endShape(CLOSE);
+}
+// Outerpoint end
 
 function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   const bg_color3 = [71, 222, 219];

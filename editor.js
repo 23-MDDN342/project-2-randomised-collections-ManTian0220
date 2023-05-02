@@ -101,8 +101,10 @@ function draw () {
   }
 
   if (mode == '4') {
-    let colour = int(map(s1,0,100,0,1))
-    sun(colour);
+    let colour = int(map(s1,0,100,0,1));
+    let outerpoints = int(map(s2,0,100,6,12));
+    let innerpoints = int(map(s3,0,100,4,16));
+    sun(outerpoints,innerpoints,colour);
   }
 
   pop();
