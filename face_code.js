@@ -25,7 +25,7 @@ pop();
 push();
 noStroke();
 fill(243,185,88);
-shine(0, 0, 4, 8, 8)
+shine(0, 0, 6, 10, 6)
 pop();
 
 push();
@@ -90,7 +90,7 @@ pop();
 
    for(let i = 0; i < n; i++){
     vertex(x+ cos(i * theta) * outerRadius, y + sin(i*theta) * outerRadius);
-    vertex(x+ cos((i + 0.5 ) * theta) * innerRadius, y + sin ((i+0.5)* theta) * outerRadius);
+    vertex(x+ cos((i + 0.5 ) * theta) * innerRadius, y + sin ((i + 0.5) * theta) * innerRadius);
   }
     endShape(CLOSE);
 }
