@@ -14,7 +14,7 @@
  * mouth_value is how open the mouth is and should generally range from 0.5 to 10
  */
 
-function sun(outerpoints, innerpoints, colour){
+function sun(outerpoints, innerpoints, colour,mouth_a,mouth_b,eye_left,eye_right){
 push(); // circle white
 if (colour ==0){
 noStroke();
@@ -66,24 +66,20 @@ pop();
 push(); // eyes
 noStroke();
 fill(42,33,26);
-ellipse(-1,0,1);
-// fill(42,33,26);
-// ellipse(-1,0,0.8);
+ellipse(-1,0,eye_left);
 pop();
 
 push(); // eyes
 noStroke();
 fill(42,33,26);
-ellipse(1,0,0.5);
-// fill(42,33,26);
-// ellipse(1,0,0.8);
+ellipse(1,0,eye_right);
 pop();
 
 push(); // mouth
 angleMode(DEGREES);
 noFill();
 stroke(172,72,37);
-arc(0,0, 5, 5, 0, 120);
+arc(0,0, 5, 5, mouth_a, mouth_b);
 pop();
 
 }

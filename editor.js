@@ -104,7 +104,12 @@ function draw () {
     let colour = int(map(s1,0,100,0,1));
     let outerpoints = int(map(s2,0,100,6,12));
     let innerpoints = int(map(s3,0,100,4,16));
-    sun(outerpoints,innerpoints,colour);
+    // let cheek_colour = int(map(s4,0,100,0,3));
+    let mouth_a = int(map(s5,0,100,10,90));
+    let mouth_b = int(map(s6,0,100,91,180));
+    let eye_left = int(map(s7,0,100,1,2));
+    let eye_right = int(map(s8,0,100,1,2));
+    sun(outerpoints,innerpoints,colour,mouth_a, mouth_b,eye_left,eye_right);
   }
 
   pop();
