@@ -27,6 +27,8 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
+  slider11= createSlider(0, 100, 50);
+  slider12= createSlider(0, 100, 50);
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -38,6 +40,8 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
+  slider11.parent('slider11Container');
+  slider12.parent('slider12Container');
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -70,6 +74,8 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
+  let s11 = slider11.value();
+  let s12 = slider11.value();
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -101,7 +107,9 @@ function draw () {
   }
 
   if (mode == '4') {
-    let colour = int(map(s1,0,100,0,1));
+    let colour = int(map(s1,0,100,0,2));
+    let Outercolour = int(map(s4,0,100,0,2));
+    let eyecolour = int(map(s9,0,100,0,2));
     let outerpoints = int(map(s2,0,100,6,12));
     let innerpoints = int(map(s3,0,100,4,16));
     // let cheek_colour = int(map(s4,0,100,0,3));
@@ -109,7 +117,10 @@ function draw () {
     let mouth_b = int(map(s6,0,100,91,180));
     let eye_left = int(map(s7,0,100,1,2));
     let eye_right = int(map(s8,0,100,1,2));
-    sun(outerpoints,innerpoints,colour,mouth_a, mouth_b,eye_left,eye_right);
+    let face_colour = int(map(s11,0,100,1,2));
+    sun(eyecolour,outerpoints,Outercolour,innerpoints,colour,mouth_a, mouth_b,eye_left,eye_right,face_colour);
+
+//function sun(eyecolour,outerpoints,Outercolour, innerpoints, colour,mouth_a,mouth_b,eye_left,eye_right){
   }
 
   pop();
