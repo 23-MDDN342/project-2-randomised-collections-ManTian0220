@@ -53,7 +53,7 @@ stroke(236,116,22);//orange
 noFill();
 inner_shine(0, 0, innerpoints, 6, 6)
 }
-else if(Outercolour == 1){
+else if(Innercolour == 1){
   strokeWeight(0.2);
   rotate(45);
   stroke(52,53,110);//dark blue
@@ -68,7 +68,7 @@ else if(Outercolour == 1){
   noFill();
   inner_shine(0, 0, innerpoints, 6, 6)
 }
-else if(Outercolour == 2){
+else if(Innercolour == 2){
   strokeWeight(0.2);
   rotate(45);
   stroke(255);//white
@@ -87,7 +87,7 @@ pop();
 ///////////////////////////// Innershine end///////////////////////////////// 
 
 ///////////////////////////// Face///////////////////////////////// 
-push(); // sun 
+push(); // sun face 
 if (face_colour == 0){
 noStroke();
 fill(254,195,61);//yellow

@@ -3,6 +3,32 @@
 ## 2023 MDDN342 Assignment 2: Randomised Collections
 **This is where you talk about your project!**
 
->This starter code is just some simple faces being drawn. 
+My project is to make random sunny face.
+Now Linked everthing to the editors. Added colour changes and make the code more readable.
 
+//Random parameters
 
+colour = int(random(0,3)); // Control cheek colour.
+Outercolour= int(random(0,3)); // Control outershine colour.
+eyecolour= int(random(0,2)); // Control eye colour.
+outerpoints = int(random(6,12));// Control the number of the outerpoints.
+innerpoints = int(random(4,16));// Control the number of the innerpoints.
+Innercolour = int(random(0,3));// Control innershine colour.
+mouth_a = int(random(10,90));// Control mouth point a.
+mouth_b = int(random(91,180));// Control mouth point b.
+eye_left = random(1, 2);// Control left eye size.
+eye_right = random(1,2);// Control right eye size.
+face_colour = int(random(0,3));// Control sunface colour.
+
+// Use 'if' to make the random sun colour match to my designed colour, like pink outer colour show along with yellow sun face.
+
+let sunvalue = random(0,100); 
+        if(sunvalue <= 40){
+          Outercolour= int(random(0));
+          face_colour = int(random(0));
+          Innercolour = int(random(0));
+        }else{
+          Outercolour= int(random(1));
+          face_colour = int(random(1));
+          Innercolour = int(random(1));
+        }

@@ -50,7 +50,7 @@ function draw () {
   let h = canvasHeight / 4;
   for(let i=0; i<4; i++) {
     for(let j=0; j<4; j++) {
-      let y = h/2 + h*i*1.5;
+      let y = h/2 + h*i*1*1.5;
       let x = w/2 + w*j*2;
       let number = int(random(w/20, w/8));
      
@@ -60,16 +60,16 @@ function draw () {
         // let mouth_value = random(3,4);
         // let is_cyclops = random(0, 100);
          let colour = int(random(0,3));
-        Outercolour= int(random(0,3));
-       eyecolour= int(random(0,2));
-     outerpoints = int(random(6,12));
-     innerpoints = int(random(4,16));
-     Innercolour = int(random(4,16));
-     mouth_a = int(random(10,90));
-     mouth_b = int(random(91,180));
-     eye_left = random(1, 2);
-     eye_right = random(1,2);
-     face_colour = int(random(0,3));
+        let Outercolour= int(random(0,3));
+       let eyecolour= int(random(0,2));
+     let outerpoints = int(random(6,12));
+     let innerpoints = int(random(4,16));
+     let Innercolour = int(random(0,3));
+     let mouth_a = int(random(10,90));
+     let mouth_b = int(random(91,180));
+     let eye_left = random(1, 2);
+     let eye_right = random(1,2);
+     let face_colour = int(random(0,3));
     
         // if(is_cyclops < 10) {
           // eye_value = 1;
@@ -83,6 +83,17 @@ function draw () {
         scale(number);
         sun(eyecolour,outerpoints,Outercolour,innerpoints,Innercolour,colour,mouth_a, mouth_b,eye_left,eye_right,face_colour);
         pop();
+
+        let sunvalue = random(0,100);
+        if(sunvalue <= 40){
+          Outercolour= int(random(0));
+          face_colour = int(random(0));
+          Innercolour = int(random(0));
+        }else{
+          Outercolour= int(random(1));
+          face_colour = int(random(1));
+          Innercolour = int(random(1));
+        }
     }
   }
 }
