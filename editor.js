@@ -27,6 +27,8 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
+  slider11= createSlider(0, 100, 50);
+  slider12= createSlider(0, 100, 50);
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -38,6 +40,8 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
+  slider11.parent('slider11Container');
+  slider12.parent('slider12Container');
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -46,7 +50,8 @@ function setup () {
   faceSelector.option('1');
   faceSelector.option('2');
   faceSelector.option('3');
-  faceSelector.value('1');
+  faceSelector.option('4');
+  faceSelector.value('4');
   faceSelector.parent('selector1Container');
 }
 
@@ -69,6 +74,8 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
+  let s11 = slider11.value();
+  let s12 = slider12.value();
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -99,7 +106,23 @@ function draw () {
     simplePurpleFace();
   }
 
-  pop();
+  if (mode == '4') {
+    let colour = int(map(s1,0,100,0,2));
+    let Outercolour = int(map(s4,0,100,0,2));
+    let eyecolour = int(map(s9,0,100,0,2));
+    let outerpoints = int(map(s2,0,100,6,12));
+    let innerpoints = int(map(s3,0,100,4,16));
+    let Innercolour = int(map(s12,0,100,0,2))
+    let mouth_a = int(map(s5,0,100,10,90));
+    let mouth_b = int(map(s6,0,100,91,180));
+    let eye_left = int(map(s7,0,100,1,2));
+    let eye_right = int(map(s8,0,100,1,2));
+    let face_colour = int(map(s11,0,100,1,2));
+    sun(eyecolour,outerpoints,Outercolour,innerpoints,Innercolour,colour,mouth_a, mouth_b,eye_left,eye_right,face_colour);
+    
+  }
+
+  // pop();
 
   if(show_face_guide) {
     strokeWeight(0.1);
