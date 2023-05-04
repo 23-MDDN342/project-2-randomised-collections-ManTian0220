@@ -75,7 +75,7 @@ function draw () {
   let s9 = slider9.value();
   let s10 = slider10.value();
   let s11 = slider11.value();
-  let s12 = slider11.value();
+  let s12 = slider12.value();
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -112,12 +112,13 @@ function draw () {
     let eyecolour = int(map(s9,0,100,0,2));
     let outerpoints = int(map(s2,0,100,6,12));
     let innerpoints = int(map(s3,0,100,4,16));
+    let Innercolour = int(map(s12,0,100,0,2))
     let mouth_a = int(map(s5,0,100,10,90));
     let mouth_b = int(map(s6,0,100,91,180));
     let eye_left = int(map(s7,0,100,1,2));
     let eye_right = int(map(s8,0,100,1,2));
     let face_colour = int(map(s11,0,100,1,2));
-    sun(eyecolour,outerpoints,Outercolour,innerpoints,colour,mouth_a, mouth_b,eye_left,eye_right,face_colour);
+    sun(eyecolour,outerpoints,Outercolour,innerpoints,Innercolour,colour,mouth_a, mouth_b,eye_left,eye_right,face_colour);
     
   }
 
