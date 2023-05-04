@@ -3,8 +3,9 @@
 ## 2023 MDDN342 Assignment 2: Randomised Collections
 **This is where you talk about your project!**
 
-My project is to make random sunny face.
-Now Linked everthing to the editors. Added colour changes and make the code more readable.
+My project is an interactive collection of randomised sunny faces made with p5js program. High contrast colour sun in a black blackground. Created by combination of geometric shapes, with different sizes. Viewers are able to change the value by going to the editor page to genarate the elements to the way they like, change colour or shape, etc. My project aims to deliver a welcoming, delightful and lively vibe with the cartoonish drawing style and bright colour palette.
+
+(Now Linked everthing to the editors. Added colour changes and make the code more readable.)
 
 //Random parameters
 
